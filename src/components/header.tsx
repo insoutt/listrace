@@ -1,48 +1,103 @@
+'use client'
 
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from '@headlessui/react'
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { cn } from '@/lib/utils';
+
+const items = [
+  {
+    id: 1,
+    title: 'Home',
+    url: '#',
+  },
+  {
+    id: 2,
+    title: 'How it works',
+    url: '#',
+  },
+  {
+    id: 3,
+    title: 'Explore',
+    url: '#',
+  },
+  {
+    id: 4,
+    title: 'Review',
+    url: '#',
+  },
+  {
+    id: 5,
+    title: 'Blog',
+    url: '#',
+  },
+  {
+    id: 6,
+    title: 'Contact',
+    url: '#',
+  },
+
+];
 const Header = () => {
   return (<>
-    <header className="border-b">
-      <ul className="flex justify-between text-xs text-gray-400">
-        <li>
-          <div>
-            <ul className="flex divide-x divide-solid border-r">
-              <li className="py-2 px-4">
-                <select className="outline-none" name="language">
-                  <option value="en">EN</option>
-                  <option value="es">ES</option>
-                </select>
-              </li>
-              <li className="py-2 px-4">
-                <select className="outline-none" name="money">
-                  <option value="usd">USD</option>
-                  <option value="eur">Euro</option>
-                  <option value="bdt">BDT</option>
-                </select>
-              </li>
-              <li className="py-2 px-4">
-                <span>(O)</span>
-              </li>
-            </ul>
-          </div>
-        </li>
+   <Disclosure as="nav" className="bg-white shadow">
+      {({ open }) => (
+        <>
+          <div className="mx-auto max-w-7xl px-4 lg:px-6 lg:px-8">
+            <div className="relative flex justify-between">
+              <div className="absolute inset-y-0 left-0 flex items-center lg:hidden">
+                {/* Mobile menu button */}
+                <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2 focus:outline-none border border-primary">
+                  <span className="absolute -inset-0.5" />
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XMarkIcon className="block size-6 text-primary" aria-hidden="true" />
+                  ) : (
+                    <Bars3Icon className="block size-6 text-primary" aria-hidden="true" />
+                  )}
+                </DisclosureButton>
+              </div>
+              <div className="flex flex-1 items-center justify-center lg:items-stretch lg:justify-between">
+                <a href='#' className="flex flex-shrink-0 items-center text-xl font-bold py-5 lg:py-9">
+                  <span>List<span className='text-primary'>Race</span></span>
+                </a>
+                <ul className="hidden lg:flex">
+                  {items.map(item => (<li key={item.id}>
+                    <a href="#"
+                    className={cn(
+                      'inline-block items-center text-sm font-[500] text-gray-400 hover:text-primary duration-500 uppercase py-9 px-5',
+                      item.id === 1 && 'text-primary',
+                    )}
+                  >
+                    {item.title}
+                  </a>
 
-        <li>
-          <div>
-            <ul className="flex divide-x border-l">
-              <li className="py-2 px-4">
-                <a href="tel:+12227776565">+1 222 777 6565</a>
-              </li>
-              <li className="py-2 px-4">
-                <a href="#">Sign In</a>
-              </li>
-              <li className="py-2 px-4">
-                <a href="#">Register</a>
-              </li>
-            </ul>
+                  </li>))}
+                </ul>
+              </div>
+            </div>
           </div>
-        </li>
-      </ul>
-    </header>
+
+          <DisclosurePanel className="lg:hidden">
+            <div className="space-y-1 pb-4 pt-2">
+            {items.map(item => (<DisclosureButton key={`it-${item.id}`}
+                as="a"
+                href="#"
+                className={cn(
+                  'block text-sm font-[500] text-gray-400 p-4',
+                  item.id === 1 && 'text-primary'
+                )}
+              >
+                {item.title}
+              </DisclosureButton>))}
+            </div>
+          </DisclosurePanel>
+        </>
+      )}
+    </Disclosure>
   </>);
 }
 
