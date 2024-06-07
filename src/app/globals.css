@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+h1, h2 {
+  @apply font-[500];
+}
+h2 {
+  @apply text-2xl;
+
+}
+.container {
+  @apply mx-auto max-w-7xl px-4;
+}
