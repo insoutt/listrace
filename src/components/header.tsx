@@ -5,10 +5,10 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { cn } from '@/lib/utils';
 
-const items = [
+export const NAV_ITEMS = [
   {
     id: 1,
     title: 'Home',
@@ -65,7 +65,7 @@ const Header = () => {
                   <span>List<span className='text-primary'>Race</span></span>
                 </a>
                 <ul className="hidden lg:flex">
-                  {items.map(item => (<li key={item.id}>
+                  {NAV_ITEMS.map(item => (<li key={item.id}>
                     <a href="#"
                     className={cn(
                       'inline-block items-center text-sm font-[500] text-gray-400 hover:text-primary duration-500 uppercase py-9 px-5',
@@ -83,7 +83,7 @@ const Header = () => {
 
           <DisclosurePanel className="lg:hidden">
             <div className="space-y-1 pb-4 pt-2">
-            {items.map(item => (<DisclosureButton key={`it-${item.id}`}
+            {NAV_ITEMS.map(item => (<DisclosureButton key={`it-${item.id}`}
                 as="a"
                 href="#"
                 className={cn(

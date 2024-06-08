@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import HeaderTop from "@/components/header-top";
 import Contact from "@/components/sections/contact";
@@ -9,5 +10,6 @@ export default function Home() {
     <Header/>
     <HowItWorks/>
     <Contact/>
+    <Footer/>
   </>);
 }
