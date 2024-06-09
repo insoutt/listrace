@@ -1,3 +1,4 @@
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 const HeaderTop = () => {
   return (<>
@@ -19,8 +20,10 @@ const HeaderTop = () => {
                   <option value="bdt">BDT</option>
                 </select>
               </li>
-              <li className="py-2 px-4">
-                <span>(O)</span>
+              <li className="py-2 px-4 flex items-center">
+                <a href="#">
+                  <MagnifyingGlassIcon className="size-3.5" aria-hidden="true" />
+                </a>
               </li>
             </ul>
           </div>
@@ -33,10 +36,10 @@ const HeaderTop = () => {
                 <a href="tel:+12227776565">+1 222 777 6565</a>
               </li>
               <li className="py-2 px-4">
-                <a href="#">Sign In</a>
+                <a className="font-thin" href="#">Sign In</a>
               </li>
               <li className="py-2 px-4">
-                <a href="#">Register</a>
+                <a className="font-thin" href="#">Register</a>
               </li>
             </ul>
           </div>
