@@ -47,8 +47,6 @@ const Header = () => {
   const [expandNav, setExpandNav] = useState(false);
 
   const onSroll = () => {
-    console.log(3, window.scrollY, expandNav);
-
     if(window.scrollY <= 40) {
       setExpandNav(false);
     }
