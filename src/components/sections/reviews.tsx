@@ -78,13 +78,13 @@ const Reviews = () => {
     centerMode: true,
     autoplay: true,
     slidesToShow: 5,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     autoplaySpeed: 1500,
     nextArrow: <></>,
     prevArrow: <></>,
     responsive: [
       {
-        breakpoint:1440,
+        breakpoint: 1440,
         settings: { slidesToShow:3 }
       },
       {
@@ -93,15 +93,15 @@ const Reviews = () => {
         settings: { slidesToShow:2 }
       },
       {
-        breakpoint:991,
+        breakpoint: 991,
         settings: {
-          slidesToShow:2,
-          centerMode:false,
+          slidesToShow: 2,
+          centerMode: false,
         },
       },
       {
         breakpoint:767,
-        settings: { slidesToShow:1 }
+        settings: { slidesToShow: 1 }
       }
     ]
   };
@@ -112,7 +112,7 @@ const Reviews = () => {
         title="CLIENTS REVIEWS"
         description="What our client say about us"
       />
-      <div className="mt-9 w-full">
+      <div className="mt-9">
         <Slider {...settings}>
           {REVIEWS.map(item => <div key={item.id} className="py-12 px-7 w-[400px] review shadow duration-300 hover:shadow-md;">
             <div>

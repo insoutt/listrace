@@ -19,6 +19,8 @@ h2 {
   @apply pt-[117px] pb-24;
 }
 
+.slick-track { @apply !flex; }
+
 .slick-current .review{
   @apply shadow-md;
 }
