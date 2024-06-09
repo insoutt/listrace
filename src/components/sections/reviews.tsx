@@ -76,10 +76,12 @@ const Reviews = () => {
   const settings: Settings = {
     infinite: true,
     centerMode: true,
-    autoplay:true,
+    autoplay: true,
     slidesToShow: 5,
     slidesToScroll: 3,
-    autoplaySpeed:1500,
+    autoplaySpeed: 1500,
+    nextArrow: <></>,
+    prevArrow: <></>,
     responsive: [
       {
         breakpoint:1440,
@@ -110,7 +112,7 @@ const Reviews = () => {
         title="CLIENTS REVIEWS"
         description="What our client say about us"
       />
-      <div className="mt-9">
+      <div className="mt-9 w-full">
         <Slider {...settings}>
           {REVIEWS.map(item => <div key={item.id} className="py-12 px-7 w-[400px] review shadow duration-300 hover:shadow-md;">
             <div>
