@@ -1,4 +1,5 @@
 import { MapPinIcon, LightBulbIcon } from "@heroicons/react/20/solid";
+import TitleSection from "../title-section";
 
 const items = [
   {
@@ -26,10 +27,10 @@ const items = [
 const HowItWorks = () => {
   return (<>
     <section className="container text-gray-600">
-      <div className="text-center">
-        <h2 className="capitalize mb-6">How it Works</h2>
-        <p className="text-gray-600">Learn More about how our website works</p>
-      </div>
+      <TitleSection
+        title="HOW IT WORKS"
+        description="Learn More about how our website works"
+      />
 
       <div className="mt-[72px]">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
