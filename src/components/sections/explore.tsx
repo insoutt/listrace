@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { HeartIcon, MapPinIcon, FolderArrowDownIcon, ArrowsPointingOutIcon, BookmarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { Badge } from "../badge";
+import TitleSection from "../title-section";
 
 const SITES = [
   {
@@ -86,11 +87,13 @@ const SITES = [
 
 const Explore = () => {
   return (<>
-    <section className="pt-[117px] pb-24 bg-gray-50">
-      <div className="text-center">
-        <h2 className="capitalize mb-6 text-gray-700">EXPLORE</h2>
-        <p className="text-gray-600">Explore New place, food, culture around the world and many more</p>
-      </div>
+    <section className="section bg-gray-50">
+
+      <TitleSection
+        title="EXPLORE"
+        description="Explore New place, food, culture around the world and many more"
+      />
+
       <div className="container mt-[78px]">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
           {SITES.map(site => <div key={site.id} className="bg-white hover:shadow-md rounded-sm border border-[#edeff1] group">

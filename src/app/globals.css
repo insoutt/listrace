@@ -10,3 +10,28 @@ h2 {
   @apply text-2xl;
 
 }
+
+.section {
+  @apply pt-[117px] pb-24;
+}
+
+.slick-current .review{
+  @apply shadow-md;
+}
+
+.slick-initialized .slick-slide {
+  @apply block py-10;
+}
+
+.slick-slide.slick-cloned {
+  @apply outline-0;
+}
+
+.slick-slide { @apply mx-3; }
+
+.slick-slide {
+  @apply ease-in-out duration-300 opacity-50;
+}
+
+.slick-active { @apply opacity-50; }
+.slick-current { @apply opacity-100; }
