@@ -8,6 +8,7 @@ import HowItWorks from "@/components/sections/how-it-works";
 import News from "@/components/sections/news";
 import Reviews from "@/components/sections/reviews";
 import Statistics from "@/components/sections/statistics";
+import Topics from "@/components/sections/topics";
 
 export default function Home() {
   return (<>
@@ -15,6 +16,7 @@ export default function Home() {
     <Header/>
 
     <HomeSection/>
+    <Topics/>
     <HowItWorks/>
     <Explore/>
     <Reviews/>
