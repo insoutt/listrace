@@ -17,6 +17,9 @@ const config: Config = {
       }
     },
     extend: {
+      borderRadius: {
+        sm: '3px',
+      },
       colors: {
         primary: '#ff545a',
       },

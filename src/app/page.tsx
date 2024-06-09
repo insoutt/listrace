@@ -1,5 +1,6 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import HomeSection from "@/components/sections/home";
 import HeaderTop from "@/components/header-top";
 import Contact from "@/components/sections/contact";
 import Explore from "@/components/sections/explore";
@@ -12,6 +13,8 @@ export default function Home() {
   return (<>
     <HeaderTop/>
     <Header/>
+
+    <HomeSection/>
     <HowItWorks/>
     <Explore/>
     <Reviews/>

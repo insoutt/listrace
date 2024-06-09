@@ -11,6 +11,10 @@ h2 {
 
 }
 
+.bg-overlay {
+  @apply before:content-[''] before:size-full before:absolute before:top-0;
+}
+
 .section {
   @apply pt-[117px] pb-24;
 }
