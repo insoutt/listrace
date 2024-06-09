@@ -4,6 +4,7 @@ import HeaderTop from "@/components/header-top";
 import Contact from "@/components/sections/contact";
 import Explore from "@/components/sections/explore";
 import HowItWorks from "@/components/sections/how-it-works";
+import News from "@/components/sections/news";
 import Reviews from "@/components/sections/reviews";
 import Statistics from "@/components/sections/statistics";
 
@@ -15,6 +16,7 @@ export default function Home() {
     <Explore/>
     <Reviews/>
     <Statistics/>
+    <News/>
     <Contact/>
     <Footer/>
   </>);

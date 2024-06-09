@@ -23,6 +23,7 @@ const config: Config = {
       spacing: {
         13: '52px',
         15: '60px',
+        30: '120px',
         75: '300px',
       },
       boxShadow: {
