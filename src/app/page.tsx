@@ -5,6 +5,7 @@ import Contact from "@/components/sections/contact";
 import Explore from "@/components/sections/explore";
 import HowItWorks from "@/components/sections/how-it-works";
 import Reviews from "@/components/sections/reviews";
+import Statistics from "@/components/sections/statistics";
 
 export default function Home() {
   return (<>
@@ -13,6 +14,7 @@ export default function Home() {
     <HowItWorks/>
     <Explore/>
     <Reviews/>
+    <Statistics/>
     <Contact/>
     <Footer/>
   </>);
