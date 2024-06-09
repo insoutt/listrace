@@ -26,7 +26,7 @@ const items = [
 ]
 const HowItWorks = () => {
   return (<>
-    <section className="container text-gray-600">
+    <section className="container text-gray-600 pb-24">
       <TitleSection
         title="HOW IT WORKS"
         description="Learn More about how our website works"

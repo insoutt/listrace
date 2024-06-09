@@ -7,6 +7,7 @@ import {
 } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { cn } from '@/lib/utils';
+import { useEffect, useState } from 'react';
 
 export const NAV_ITEMS = [
   {
@@ -42,8 +43,30 @@ export const NAV_ITEMS = [
 
 ];
 const Header = () => {
-  return (<>
-   <Disclosure as="nav" className="bg-white shadow">
+
+  const [expandNav, setExpandNav] = useState(false);
+
+  const onSroll = () => {
+    console.log(3, window.scrollY, expandNav);
+
+    if(window.scrollY <= 40) {
+      setExpandNav(false);
+    }
+    if(window.scrollY > 40) {
+      setExpandNav(true);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', onSroll);
+
+    return () => {
+      window.removeEventListener('scroll', onSroll);
+    }
+  }, []);
+
+  return (<div style={{display: 'unset'}}>
+   <Disclosure as="nav" className="bg-white sticky z-50 top-0 shadow-[0_2px_5px_rgba(0,0,0,.2)]">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -68,8 +91,9 @@ const Header = () => {
                   {NAV_ITEMS.map(item => (<li key={item.id}>
                     <a href="#"
                     className={cn(
-                      'inline-block items-center text-sm font-[500] text-gray-400 hover:text-primary duration-500 uppercase py-9 px-5',
+                      'inline-block items-center text-sm font-[500] text-gray-400 hover:text-primary duration-500 uppercase py-9',
                       item.id === 1 && 'text-primary',
+                      expandNav ? 'px-5' : 'px-3',
                     )}
                   >
                     {item.title}
@@ -98,7 +122,7 @@ const Header = () => {
         </>
       )}
     </Disclosure>
-  </>);
+  </div>);
 }
 
 export default Header;

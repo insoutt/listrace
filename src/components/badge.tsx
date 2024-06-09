@@ -17,7 +17,7 @@ export function Badge({ color = 'blue', className, ...props }: BadgeProps & Reac
       {...props}
       className={cn(
         className,
-        'inline-flex items-center gap-x-1.5 rounded-md px-2 text-sm/5 font-medium sm:text-xs/5',
+        'inline-flex items-center gap-x-1.5 rounded-md px-2 text-xs py-0.5',
         colors[color]
       )}
     />

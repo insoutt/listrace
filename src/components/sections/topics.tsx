@@ -30,7 +30,7 @@ const Topics = () => {
   return (<>
     <section className="mt-15 lg:mt-0">
       <div className="container">
-        <div className="relative flex flex-wrap justify-center ml-5 top-0 sm:top-[-100px]">
+        <div className="relative flex flex-wrap justify-center ml-5 top-0 sm:top-[-100px] md:top-[-150px]">
           {TOPICS.map(topic => <div key={topic.name} className="flex flex-col w-[205px] h-[170px] mb-5 mr-5 bg-white hover:bg-primary shadow items-center justify-center group duration-500">
             {topic.icon}
             {/* <topic.Icon className="size-12 text-gray-900 group-hover:text-white"/> */}

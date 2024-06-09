@@ -43,7 +43,9 @@ const News = () => {
               <Image src={item.thumbnail} alt={item.title} width={370} height={250} className="w-full"/>
             </div>
             <div className="p-6">
-              <h3 className="font-[500] group-hover:text-primary">{item.title}</h3>
+              <a href="#">
+                <h3 className="font-[500] group-hover:text-primary">{item.title}</h3>
+              </a>
               <div className="flex space-x-2 divide-x text-gray-500 text-sm mt-3 mb-5">
                 <div>
                   Posted By <span className="text-gray-900 font-[500]">{item.author}</span>

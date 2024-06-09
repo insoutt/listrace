@@ -101,14 +101,16 @@ const Explore = () => {
               <Image src={site.thumbnail} alt={site.title} width={370} height={270} className="w-full"/>
 
               <div className="flex opacity-0 group-hover:opacity-100 justify-between duration-700 absolute right-2 left-2 -bottom-1 group-hover:bottom-4">
-                <Badge color="red">{site.info}</Badge>
+                <div>
+                  <Badge color="red">{site.info}</Badge>
+                </div>
 
                 <div className="flex space-x-1.5">
-                  <div className="bg-gray-900 p-1 text-white">
-                    <ArrowsPointingOutIcon className="size-5" aria-hidden="true"/>
+                  <div className="bg-gray-900 p-1 text-white hover:text-blue-500">
+                    <ArrowsPointingOutIcon className="size-4" aria-hidden="true"/>
                   </div>
-                  <div className="bg-gray-900 p-1 text-white">
-                    <BookmarkIcon className="size-5" aria-hidden="true"/>
+                  <div className="bg-gray-900 p-1 text-white hover:text-blue-500">
+                    <BookmarkIcon className="size-4" aria-hidden="true"/>
                   </div>
                 </div>
               </div>
