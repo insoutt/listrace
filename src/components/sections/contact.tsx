@@ -10,7 +10,7 @@ const Contact = () => {
 
         <div className="flex justify-center">
           <form className="relative">
-            <input type="text" placeholder="Enter your email here" name="email" className="h-15 w-75 sm:w-[630px] pl-[30px] border border-white focus:outline-none shadow-sm hover:shadow-md duration-500" />
+            <input type="text" placeholder="Enter your email here" name="email" className="h-15 w-75 sm:w-[630px] pl-[30px] border border-white focus:outline-none shadow-sm hover:shadow-lg duration-500" />
             <button className="h-15 border bg-primary text-white py-2 w-[180px] hover:bg-red-500 absolute top-0 right-0 font-[500]" type="submit">Create Account</button>
           </form>
         </div>

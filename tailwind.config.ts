@@ -27,7 +27,8 @@ const config: Config = {
       },
       boxShadow: {
         sm: '0 0px 10px rgba(21,19,19,.1)',
-        md: '0 5px 20px rgba(21,19,19,.4)',
+        md: '0 10px 20px rgba(21,19,19,.2)',
+        lg: '0 5px 20px rgba(21,19,19,.4)',
       }
     },
   },
