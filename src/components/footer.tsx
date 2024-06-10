@@ -64,13 +64,13 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="py-10 border-t grid grid-cols-12 text-gray-400 space-x-4">
-        <div className="col-span-5">
+      <div className="p-5 border-t grid grid-cols-1 sm:grid-cols-12 text-gray-400 sm:space-x-4">
+        <div className="col-span-5 mt-5">
           <p className="text-sm leading-6">
             © Copyright. Designed And Developed By <a className="hover:text-primary duration-300" href="https://www.linkedin.com/in/elvis-betancourt/">@insoutt</a>
           </p>
         </div>
-        <div className="col-start-7 col-end-13">
+        <div className="sm:col-start-7 sm:col-end-13 mt-5">
           <ul className="flex items-center justify-end space-x-4">
             <li>
               <a href="tel:+12227776565" className="flex items-center space-x-1 hover:text-primary duration-300">
