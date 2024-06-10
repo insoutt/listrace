@@ -4,6 +4,7 @@ import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
+  Transition,
 } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { cn } from '@/lib/utils';
@@ -103,20 +104,29 @@ const Header = () => {
             </div>
           </div>
 
-          <DisclosurePanel className="lg:hidden">
-            <div className="space-y-1 pb-4 pt-2">
-            {NAV_ITEMS.map(item => (<DisclosureButton key={`it-${item.id}`}
-                as="a"
-                href="#"
-                className={cn(
-                  'block text-sm font-[500] text-gray-400 p-4',
-                  item.id === 1 && 'text-primary'
-                )}
-              >
-                {item.title}
-              </DisclosureButton>))}
-            </div>
-          </DisclosurePanel>
+          <Transition
+            enter="duration-300 ease-out"
+            enterFrom="opacity-0 -translate-y-6"
+            enterTo="opacity-100 translate-y-0"
+            leave="duration-300 ease-out"
+            leaveFrom="opacity-100 translate-y-0"
+            leaveTo="opacity-0 -translate-y-6"
+          >
+            <DisclosurePanel className="lg:hidden">
+              <div className="space-y-1 pb-4 pt-2">
+              {NAV_ITEMS.map(item => (<DisclosureButton key={`it-${item.id}`}
+                  as="a"
+                  href="#"
+                  className={cn(
+                    'block text-sm font-[500] text-gray-400 p-4',
+                    item.id === 1 && 'text-primary'
+                  )}
+                >
+                  {item.title}
+                </DisclosureButton>))}
+              </div>
+            </DisclosurePanel>
+          </Transition>
         </>
       )}
     </Disclosure>
