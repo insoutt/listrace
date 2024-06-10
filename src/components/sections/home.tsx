@@ -23,6 +23,7 @@ const Home = () => {
       console.log('----Places----');
       console.log('Type Contains:', type);
       console.log('Place Contains:', place);
+      console.log(`Found ${places.length} places:`);
       console.table(places);
       console.log('-'.repeat(40));
 
