@@ -14,7 +14,7 @@ const News = async () => {
   }
 
   return (<>
-    <section className="pt-30 pb-24">
+    <section id="blog" className="pt-30 pb-24">
       <TitleSection
         title="NEWS AND ARTICLES"
         description="Always up to date with our latest News and Articles"

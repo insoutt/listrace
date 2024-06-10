@@ -23,7 +23,7 @@ const Contact = () => {
   }
 
   return (<>
-    <section className="bg-gray-50 py-[150px]">
+    <section id="contact" className="bg-gray-50 py-[150px]">
       <div className="container">
         <div className="mb-13 text-center">
           <h2>DO YOU WANT TO ADD YOUR BUSINESS LISTING WITH US?</h2>

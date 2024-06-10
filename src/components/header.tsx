@@ -12,32 +12,32 @@ import { useEffect, useState } from 'react';
 
 export const NAV_ITEMS = [
   {
-    id: 1,
+    key: 'home',
     title: 'Home',
     url: '#',
   },
   {
-    id: 2,
+    key: 'how-it-works',
     title: 'How it works',
     url: '#',
   },
   {
-    id: 3,
+    key: 'explore',
     title: 'Explore',
     url: '#',
   },
   {
-    id: 4,
+    key: 'review',
     title: 'Review',
     url: '#',
   },
   {
-    id: 5,
+    key: 'blog',
     title: 'Blog',
     url: '#',
   },
   {
-    id: 6,
+    key: 'contact',
     title: 'Contact',
     url: '#',
   },
@@ -46,14 +46,40 @@ export const NAV_ITEMS = [
 const Header = () => {
 
   const [expandNav, setExpandNav] = useState(false);
+  const [current, setCurrent] = useState('');
 
   const onSroll = () => {
+    NAV_ITEMS.forEach(item => checkSection(item.key));
     if(window.scrollY <= 40) {
       setExpandNav(false);
     }
     if(window.scrollY > 40) {
       setExpandNav(true);
     }
+  }
+
+  const checkSection = (id: string) => {
+    const element = document.getElementById(id);
+    if(!element) return;
+
+    const bounds = element.getBoundingClientRect();
+    const offset = 250;
+    console.log(id, bounds.top, bounds.bottom, offset - bounds.bottom);
+
+    const isVisible = (offset - bounds.top) > 0 && (offset - bounds.bottom) < 0;
+
+    console.log(id, 'is visible', isVisible);
+
+    if(isVisible) {
+      setCurrent(id);
+    }
+  }
+
+  const navigate = (key: string) => {
+    const element = document.getElementById(key);
+
+    element?.scrollIntoView({behavior: 'smooth'});
+    setCurrent(key);
   }
 
   useEffect(() => {
@@ -87,11 +113,15 @@ const Header = () => {
                   <span>List<span className='text-primary'>Race</span></span>
                 </a>
                 <ul className="hidden lg:flex">
-                  {NAV_ITEMS.map(item => (<li key={item.id}>
-                    <a href="#"
+                  {NAV_ITEMS.map(item => (<li key={item.key}>
+                    <a href={`/#${item.key}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate(item.key);
+                    }}
                     className={cn(
                       'inline-block items-center text-sm font-[500] text-gray-400 hover:text-primary duration-500 uppercase py-9',
-                      item.id === 1 && 'text-primary',
+                      item.key === current && 'text-primary',
                       expandNav ? 'px-5' : 'px-3',
                     )}
                   >
@@ -114,12 +144,16 @@ const Header = () => {
           >
             <DisclosurePanel className="lg:hidden">
               <div className="space-y-1 pb-4 pt-2">
-              {NAV_ITEMS.map(item => (<DisclosureButton key={`it-${item.id}`}
+              {NAV_ITEMS.map(item => (<DisclosureButton key={`it-${item.key}`}
                   as="a"
-                  href="#"
+                  href={`/#${item.key}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate(item.key);
+                  }}
                   className={cn(
                     'block text-sm font-[500] text-gray-400 p-4',
-                    item.id === 1 && 'text-primary'
+                    item.key === current && 'text-primary'
                   )}
                 >
                   {item.title}

@@ -16,7 +16,7 @@ const Explore = async () => {
   }
 
   return (<>
-    <section className="section bg-gray-50">
+    <section id="explore" className="section bg-gray-50">
       <TitleSection
         title="EXPLORE"
         description="Explore New place, food, culture around the world and many more"

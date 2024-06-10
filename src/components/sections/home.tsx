@@ -42,7 +42,7 @@ const Home = () => {
 
 
   return (<>
-    <section className="relative bg-[url('/assets/images/home.jpg')] h-[800px] bg-no-repeat bg-cover bg-center bg-overlay before:bg-[rgba(65,73,89,.65)] text-white">
+    <section id="home" className="relative bg-[url('/assets/images/home.jpg')] h-[800px] bg-no-repeat bg-cover bg-center bg-overlay before:bg-[rgba(65,73,89,.65)] text-white">
       <div className="container relative">
         <div className="pt-20 md:pt-[155px] text-center text-balance">
           <h2 className="text-2xl md:text-[40px] md:leading-[50px] font-bold">BEST PLACE TO FIND AND EXPLORE THAT ALL YOU NEED</h2>

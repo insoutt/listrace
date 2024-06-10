@@ -61,7 +61,7 @@ const Reviews = () => {
   }
 
   return (<>
-    <section className="section">
+    <section id="review" className="section">
       <TitleSection
         title="CLIENTS REVIEWS"
         description="What our client say about us"

@@ -37,7 +37,7 @@ const SOCIAL = [
 const FOOTER_ITEMS = [
   ...NAV_ITEMS.slice(1),
   {
-    id: 10,
+    key: 'account',
     title: 'My Account',
     url: '#',
   }
@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
         <div className="mt-5 sm:mt-0">
           <ul className="flex flex-wrap">
-          {FOOTER_ITEMS.map(item => (<li key={item.id}>
+          {FOOTER_ITEMS.map(item => (<li key={item.key}>
             <a href="#"
                 className="inline-block items-center text-sm font-[500] pr-4 text-[#859098] hover:text-primary duration-500 uppercase">
               {item.title}
