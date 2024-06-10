@@ -3,100 +3,29 @@ import { HeartIcon, MapPinIcon, FolderArrowDownIcon, ArrowsPointingOutIcon, Book
 import Image from "next/image";
 import { Badge } from "../badge";
 import TitleSection from "../title-section";
+import ApiService from "@/services/ApiService";
+import { Place } from "@/data";
+import FetchError from "../fetch-error";
 
-const SITES = [
-  {
-    id: 1,
-    thumbnail: process.env.NEXT_PUBLIC_BASE_URL + '/assets/images/explore/e1.jpg',
-    title: 'Tommy Helfinger Bar',
-    info: 'Best Rated',
-    rate: 5,
-    total_ratings: 10,
-    form: '5$-300$',
-    type: 'Restaurant',
-    avatar: process.env.NEXT_PUBLIC_BASE_URL + '/assets/images/explore/person.png',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua....',
-    status: 'Close Now',
-  },
-  {
-    id: 2,
-    thumbnail: process.env.NEXT_PUBLIC_BASE_URL + '/assets/images/explore/e2.jpg',
-    title: 'Swim And Dine Resort',
-    info: 'Featured',
-    rate: 4.5,
-    total_ratings: 8,
-    form: '50$-500$',
-    type: 'Hotel',
-    avatar: process.env.NEXT_PUBLIC_BASE_URL + '/assets/images/explore/person.png',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua....',
-    status: 'Open Now',
-  },
-  {
-    id: 3,
-    thumbnail: process.env.NEXT_PUBLIC_BASE_URL + '/assets/images/explore/e3.jpg',
-    title: 'Europe Tour',
-    info: 'Best Rated',
-    rate: 5,
-    total_ratings: 15,
-    form: '5k$-10k$',
-    type: 'Destination',
-    avatar: process.env.NEXT_PUBLIC_BASE_URL + '/assets/images/explore/person.png',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua....',
-    status: 'Close Now',
-  },
-  {
-    id: 4,
-    thumbnail: process.env.NEXT_PUBLIC_BASE_URL + '/assets/images/explore/e4.jpg',
-    title: 'Banglow With Swiming Pool',
-    info: 'Most View',
-    rate: 5,
-    total_ratings: 10,
-    form: '10k$-15k$',
-    type: 'Real Estate',
-    avatar: process.env.NEXT_PUBLIC_BASE_URL + '/assets/images/explore/person.png',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua....',
-    status: 'Close Now',
-  },
-  {
-    id: 5,
-    thumbnail: process.env.NEXT_PUBLIC_BASE_URL + '/assets/images/explore/e5.jpg',
-    title: 'Vintage Car Expo',
-    info: 'Most View',
-    rate: 4.2,
-    total_ratings: 8,
-    form: '500$-1200$',
-    type: 'Automotion',
-    avatar: process.env.NEXT_PUBLIC_BASE_URL + '/assets/images/explore/person.png',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua....',
-    status: 'Open Now',
-  },
-  {
-    id: 6,
-    thumbnail: process.env.NEXT_PUBLIC_BASE_URL + '/assets/images/explore/e6.jpg',
-    title: 'Thailand Tour',
-    info: 'Best Rated',
-    rate: 5,
-    total_ratings: 15,
-    form: '5k$-10k$',
-    type: 'Destination',
-    avatar: process.env.NEXT_PUBLIC_BASE_URL + '/assets/images/explore/person.png',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua....',
-    status: 'Close Now',
-  },
-]
+const Explore = async () => {
+  let places: Place[] | null = []
+  try {
+    places = await ApiService.getPlaces();
+  } catch (error) {
+    places = null;
+  }
 
-const Explore = () => {
   return (<>
     <section className="section bg-gray-50">
-
       <TitleSection
         title="EXPLORE"
         description="Explore New place, food, culture around the world and many more"
       />
 
       <div className="container mt-[78px]">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-          {SITES.map(site => <div key={site.id} className="bg-white hover:shadow-md rounded-sm border border-[#edeff1] group">
+        {places === null && <FetchError/>}
+        {places && <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+          {places.map(site => <div key={site.id} className="bg-white hover:shadow-md rounded-sm border border-[#edeff1] group">
             <div className="relative">
               <Image src={site.thumbnail} alt={site.title} width={370} height={270} className="w-full"/>
 
@@ -163,7 +92,7 @@ const Explore = () => {
               </div>
             </div>
           </div>)}
-        </div>
+        </div>}
       </div>
     </section>
   </>);

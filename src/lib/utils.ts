@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export function mockResponseTime(): Promise<void> {
   return new Promise(resolve => {
-    const time = randomBetween(2, 5) * 1000;
+    const time = randomBetween(1, 3) * 1000;
     setTimeout(() => resolve(), time);
   })
 }

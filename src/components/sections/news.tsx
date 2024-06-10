@@ -1,34 +1,18 @@
 import Image from "next/image";
 import TitleSection from "../title-section";
+import ApiService from "@/services/ApiService";
+import { News as TNews } from "@/data";
+import FetchError from "../fetch-error";
 
-const NEWS = [
-  {
-    id: 1,
-    thumbnail: process.env.NEXT_PUBLIC_BASE_URL + '/assets/images/blog/b1.jpg',
-    title: 'How to find your Desired Place more quickly',
-    author: 'ADMIN',
-    date: 'March 2018',
-    summary: 'Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod tempore incididunt ut labore et dolore magna.',
-  },
-  {
-    id: 2,
-    thumbnail: process.env.NEXT_PUBLIC_BASE_URL + '/assets/images/blog/b2.jpg',
-    title: 'How to find your Desired Place more quickly',
-    author: 'ADMIN',
-    date: 'March 2018',
-    summary: 'Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod tempore incididunt ut labore et dolore magna.',
-  },
-  {
-    id: 3,
-    thumbnail: process.env.NEXT_PUBLIC_BASE_URL + '/assets/images/blog/b3.jpg',
-    title: 'How to find your Desired Place more quickly',
-    author: 'ADMIN',
-    date: 'March 2018',
-    summary: 'Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod tempore incididunt ut labore et dolore magna.',
-  },
-];
 
-const News = () => {
+const News = async () => {
+  let news: TNews[] | null = []
+  try {
+    news = await ApiService.getNews();
+  } catch (error) {
+    news = null;
+  }
+
   return (<>
     <section className="pt-30 pb-24">
       <TitleSection
@@ -37,8 +21,9 @@ const News = () => {
       />
 
       <div className="container pt-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-          {NEWS.map(item => <div key={item.id} className="shadow hover:shadow-lg duration-500 group">
+        {news === null && <FetchError/>}
+        {news && <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+          {news.map(item => <div key={item.id} className="shadow hover:shadow-lg duration-500 group">
             <div>
               <Image src={item.thumbnail} alt={item.title} width={370} height={250} className="w-full"/>
             </div>
@@ -57,7 +42,7 @@ const News = () => {
               <p className="text-gray-500 text-sm">{item.summary}</p>
             </div>
           </div>)}
-        </div>
+        </div>}
       </div>
     </section>
   </>);
