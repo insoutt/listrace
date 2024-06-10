@@ -19,9 +19,7 @@ export async function GET(
     return Response.json({
       error: 1,
       message: 'Route not found',
-    }, {
-      status: 404,
-    })
+    }, { status: 404 })
   }
 
   return Response.json({ data: items });

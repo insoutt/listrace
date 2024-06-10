@@ -1,4 +1,4 @@
-import { News, Place, REVIEWS, Review } from "@/data";
+import { News, Place, REVIEWS, Review, Search } from "@/data";
 import BaseService from "./BaseService";
 import { AxiosError } from "axios";
 
@@ -35,6 +35,11 @@ export default {
 
   async getNews(): Promise<News[]> {
     const {data} = await BaseService.get<Response<News[]>>('/news');
+    return data.data;
+  },
+
+  async search(type: string, place: string): Promise<Search[]> {
+    const {data} = await BaseService.post<Response<Search[]>>('/search', { place, type });
     return data.data;
   },
 }

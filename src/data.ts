@@ -13,13 +13,19 @@ export interface Place {
   thumbnail: string
   title: string
   info: string
-  rate: number,
-  total_ratings: number,
+  rate: number
+  total_ratings: number
   form: string
   type: string
-  avatar: string,
+  avatar: string
   description: string
   status: string
+}
+
+export interface Search {
+  id: number
+  title: string
+  type: 'place' | 'food' | 'restaurant' | 'automobile'
 }
 
 export interface Review {
@@ -205,3 +211,24 @@ export const NEWS: News[] = [
     summary: 'Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod tempore incididunt ut labore et dolore magna.',
   },
 ];
+
+
+export const SEARCH: Search[] = [
+  { "id": 1, "title": "Central Park", "type": "place" },
+  { "id": 2, "title": "Eiffel Tower", "type": "place" },
+  { "id": 3, "title": "Great Wall of China", "type": "place" },
+  { "id": 4, "title": "Sydney Opera House", "type": "place" },
+  { "id": 5, "title": "Colosseum", "type": "place" },
+  { "id": 6, "title": "Statue of Liberty", "type": "place" },
+  { "id": 7, "title": "Machu Picchu", "type": "place" },
+  { "id": 8, "title": "Taj Mahal", "type": "place" },
+  { "id": 9, "title": "Grand Canyon", "type": "place" },
+  { "id": 10, "title": "Buckingham Palace", "type": "place" },
+  { "id": 11, "title": "Le Bernardin", "type": "restaurant" },
+  { "id": 12, "title": "Noma", "type": "restaurant" },
+  { "id": 13, "title": "Gordon Ramsay Restaurant", "type": "restaurant" },
+  { "id": 14, "title": "Joe's Pizza", "type": "food" },
+  { "id": 15, "title": "Shake Shack", "type": "food" },
+  { "id": 16, "title": "Ferrari Showroom", "type": "automobile" },
+  { "id": 17, "title": "Tesla Store", "type": "automobile" }
+]
