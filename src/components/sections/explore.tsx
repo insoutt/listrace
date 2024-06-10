@@ -62,7 +62,7 @@ const Explore = async () => {
                 <span>{site.type}</span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-6 pb-7 border-b border-[#e1e5eb]">
+              <div className="grid grid-cols-1 sm:grid-cols-6 pb-7 border-b border-[#e1e5eb] gap-x-2">
                 <div className="mb-2 sm:mb-0">
                   <Image src={site.avatar} alt="avatar" width={40} height={40}/>
                 </div>
