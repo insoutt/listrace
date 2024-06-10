@@ -36,10 +36,10 @@ const HeaderTop = () => {
                 <a href="tel:+12227776565">+1 222 777 6565</a>
               </li>
               <li className="py-2 px-4">
-                <a className="font-thin" href="#">Sign In</a>
+                <a href="#">Sign In</a>
               </li>
               <li className="py-2 px-4">
-                <a className="font-thin" href="#">Register</a>
+                <a href="#">Register</a>
               </li>
             </ul>
           </div>

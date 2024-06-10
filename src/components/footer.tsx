@@ -73,7 +73,7 @@ const Footer = () => {
         <div className="col-start-7 col-end-13">
           <ul className="flex items-center space-x-4">
             <li>
-              <a href="tel:+593984709446" className="flex items-center space-x-1 hover:text-primary duration-300">
+              <a href="tel:+12227776565" className="flex items-center space-x-1 hover:text-primary duration-300">
                 <PhoneIcon className="size-4" aria-hidden="true"/> <span className="font-thin text-sm">+1 (222) 777 8888</span>
               </a>
             </li>
