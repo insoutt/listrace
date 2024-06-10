@@ -53,7 +53,7 @@ const Home = () => {
         <div className="pt-20 md:pt-[155px] text-center text-balance">
           <Transition
             show={show}
-            enter="transition-trasnform duration-500"
+            enter="transition-trasnform duration-1000"
             enterFrom="translate-y-10 opacity-0"
             enterTo="translate-y-0 opacity-100"
           >
@@ -67,7 +67,7 @@ const Home = () => {
         <div className="mt-16">
           <Transition
             show={show}
-            enter="transition-trasnform duration-500"
+            enter="transition-trasnform duration-1000"
             enterFrom="-translate-y-10 opacity-0"
             enterTo="translate-y-0 opacity-100"
           >
