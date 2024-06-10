@@ -9,6 +9,7 @@ import News from "@/components/sections/news";
 import Reviews from "@/components/sections/reviews";
 import Statistics from "@/components/sections/statistics";
 import Topics from "@/components/sections/topics";
+import ScrollTop from "@/components/scroll-top";
 
 export default function Home() {
   return (<>
@@ -24,5 +25,6 @@ export default function Home() {
     <News/>
     <Contact/>
     <Footer/>
+    <ScrollTop/>
   </>);
 }
