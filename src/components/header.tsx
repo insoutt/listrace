@@ -73,8 +73,10 @@ const Header = () => {
 
   const navigate = (key: string) => {
     const element = document.getElementById(key);
-
-    element?.scrollIntoView({behavior: 'smooth'});
+    element?.scrollIntoView({
+      block: key === 'how-it-works' ? 'end' : 'start',
+      behavior: 'smooth',
+    });
     setCurrent(key);
   }
 
