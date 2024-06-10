@@ -2,9 +2,8 @@
 const nextConfig = {
   images: {
     remotePatterns: [
-      {
-        hostname: 'localhost',
-      },
+      { hostname: 'localhost' },
+      { hostname: 'zenith.elvisfernando.com' }
 
     ]
   }
