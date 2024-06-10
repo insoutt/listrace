@@ -11,6 +11,9 @@ h2 {
 
 }
 
+.bg-loading {
+  @apply bg-gray-300 animate-pulse;
+}
 .bg-overlay {
   @apply before:content-[''] before:size-full before:absolute before:top-0;
 }
@@ -21,7 +24,7 @@ h2 {
 
 .slick-track { @apply !flex; }
 
-.slick-current .review{
+.slick-current .review {
   @apply shadow-md;
 }
 
