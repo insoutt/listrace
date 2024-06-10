@@ -64,11 +64,7 @@ const Header = () => {
 
     const bounds = element.getBoundingClientRect();
     const offset = 250;
-    console.log(id, bounds.top, bounds.bottom, offset - bounds.bottom);
-
     const isVisible = (offset - bounds.top) > 0 && (offset - bounds.bottom) < 0;
-
-    console.log(id, 'is visible', isVisible);
 
     if(isVisible) {
       setCurrent(id);
