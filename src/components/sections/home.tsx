@@ -5,7 +5,6 @@ import { ArrowPathIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import { useEffect, useState } from "react";
 import ApiService from "@/services/ApiService";
 import { Transition } from "@headlessui/react";
-
 const Home = () => {
 
   const [place, setPlace] = useState('');

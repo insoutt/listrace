@@ -18,6 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={poppins.className}>
+      <link rel="preload" as="image" href="/assets/images/home.webp" />
       <body className={poppins.className}>{children}</body>
     </html>
   );

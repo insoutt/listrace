@@ -29,7 +29,7 @@ const STATS = [
 const Statistics = () => {
   const [showImage, seShowtImage] = useState(false);
   useEffect(() => {
-    seShowtImage(true);
+    setTimeout(() => seShowtImage(true), 1000)
   }, []);
 
   return (<>
