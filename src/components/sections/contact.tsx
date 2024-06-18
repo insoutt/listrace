@@ -1,7 +1,7 @@
 'use client'
 
 import ApiService from "@/services/ApiService";
-import { FormEvent, MouseEvent, useState } from "react";
+import { useState } from "react";
 
 const Contact = () => {
   const [email, setEmail] = useState('');
