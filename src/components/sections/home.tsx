@@ -48,7 +48,7 @@ const Home = () => {
 
 
   return (<>
-    <section id="home" className="relative bg-[url('/assets/images/home.jpg')] h-[800px] bg-no-repeat bg-cover bg-center bg-overlay before:bg-[rgba(65,73,89,.65)] text-white">
+    <section id="home" className="relative bg-[url('/assets/images/home.webp')] h-[800px] bg-no-repeat bg-cover bg-center bg-overlay before:bg-[rgba(65,73,89,.65)] text-white">
       <div className="container relative">
         <div className="pt-20 md:pt-[155px] text-center text-balance">
           <Transition
