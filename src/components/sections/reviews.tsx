@@ -3,7 +3,6 @@
 import Image from "next/image";
 import TitleSection from "../title-section";
 import Slider, { Settings } from "react-slick";
-import { StarIcon } from "@heroicons/react/20/solid";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import ApiService from "@/services/ApiService";
