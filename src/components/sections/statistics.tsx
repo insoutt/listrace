@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Counter from "../counter";
 import { cn } from "@/lib/utils";
+import { useInView } from "react-intersection-observer";
 
 const STATS = [
   {
@@ -27,13 +28,19 @@ const STATS = [
   },
 ]
 const Statistics = () => {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+  });
+
   const [showImage, seShowtImage] = useState(false);
   useEffect(() => {
-    setTimeout(() => seShowtImage(true), 1000)
-  }, []);
+    if(inView && !showImage) {
+      seShowtImage(true);
+    }
+  }, [inView]);
 
   return (<>
-    <section className={cn(
+    <section ref={ref} className={cn(
       "relative pt-32 pb-28 bg-center bg-no-repeat bg-cover bg-overlay before:bg-[rgba(75,75,75,.60)]",
       showImage && "bg-[url('/assets/images/counter-banner.webp')]",
     )}>
